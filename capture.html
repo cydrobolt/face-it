@@ -1,0 +1,24 @@
+<html>
+<head>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/popup.css" />
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/tracking.min.js"></script>
+    <script src="lib/data/face-min.js"></script>
+    <script src="lib/math.min.js"></script>
+    <script src="capture.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>face-it</h1>
+        <p>Please leave this tab open while you use face-it.</p>
+        <p>It is required due to Chrome's restrictions on video capture for extensions.</p>
+    </div>
+    <div class="face-frame" style="visibility: hidden">
+        <div class="face-container">
+            <video id="video" width="320" height="240" preload autoplay loop muted></video>
+            <canvas id="canvas" width="320" height="240"></canvas>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,20 +1,31 @@
 {
-  "manifest_version": 2,
-  "name": "face-it",
-  "version": "0.1",
-  "content_scripts": [
-    {
-      "matches": [
-        "http://*/*",
-        "https://*/*"
-      ],
-      "js": [
-          "lib/math.min.js",
-          "lib/tracking-min.js",
-          "lib/data/face-min.js",
-          "lib/jquery.min.js",
-          "content.js"
-      ]
-    }
-  ]
+    "manifest_version": 2,
+    "name": "face-it",
+    "version": "0.1",
+    "icons": {"64": "icon.png"},
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "background": {
+        "persistent": false,
+        "page": "background.html"
+    },
+    "permissions": [
+        "<all_urls>",
+        "background",
+        "tabs"
+    ],
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_title": "face-it",
+        "default_popup": "popup.html"
+    },
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }
