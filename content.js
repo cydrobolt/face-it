@@ -20,7 +20,17 @@ function performScroll(px) {
     window.scrollBy(0, px);
 }
 
+var element_string = "<div class=\"face-frame\" style=\"visibility: hidden\">\
+    <div class=\"face-container\">\
+        <video id=\"video\" width=\"320\" height=\"240\" preload autoplay loop muted></video>\
+        <canvas id=\"canvas\" width=\"320\" height=\"240\"></canvas>\
+    </div>\
+</div>";
+
+
 $(function () {
+    $("body").append(element_string);
+
     var video = $("#video");
     var canvas = $('#canvas')[0];
     var context = canvas.getContext('2d');
@@ -59,16 +69,6 @@ $(function () {
                     performScroll(std_dev);
                 }
             }
-
-            // debug display on video feed
-            /*
-                context.strokeStyle = '#a64ceb';
-                context.strokeRect(rect.x, rect.y, rect.width, rect.height);
-                context.font = '11px Helvetica';
-                context.fillStyle = "#fff";
-                context.fillText('x: ' + rect.x + 'px', rect.x + rect.width + 5, rect.y + 11);
-                context.fillText('y: ' + rect.y + 'px', rect.x + rect.width + 5, rect.y + 22);
-            */
         });
     });
 });
