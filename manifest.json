@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "face-it",
+  "version": "0.1",
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+          "lib/math.min.js",
+          "lib/tracking-min.js",
+          "lib/data/face-min.js",
+          "lib/jquery.min.js",
+          "content.js"
+      ]
+    }
+  ]
+}
